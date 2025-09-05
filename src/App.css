@@ -1,10 +1,8 @@
-/* Define color variable */
 :root {
-  --primary-color: #82B1FF;  /* Light blue color */
-  --highlight-color: #448AFF;  /* Light blue color */
+  --primary-color: #82B1FF; 
+  --highlight-color: #448AFF; 
 }
 
-/* Global reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,7 +12,7 @@
 html, body {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #121212; /* Dark background */
+  background: #121212;
   color: #e0e0e0;
 }
 
@@ -25,7 +23,7 @@ html, body {
   justify-content: center;
   height: 100%;
   padding: 20px;
-  position: relative; /* Needed for toast positioning */
+  position: relative;
 }
 
 /* Main container with a dark background, rounded corners, and a subtle shadow */
@@ -33,7 +31,8 @@ html, body {
   background: #1e1e1e;
   border-radius: 8px;
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
+  min-height: 600px;
   display: flex;
   gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -47,17 +46,34 @@ html, body {
   flex-direction: column;
 }
 
+
 .right-side {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 650px;
+}
+
+.right-side ul {
+  max-height: 550px;     
+  overflow-y: auto;       
+  word-break: break-all;  
+  padding-right: 8px;    
+}
+
+/* Actions row styling */
+.actions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
 }
 
 /* Header styling with an accent color */
 h2 {
   margin-bottom: 10px;
   font-size: 1.2em;
-  color: var(--primary-color); /* Using the color variable */
+  color: var(--primary-color);
   border-bottom: 1px solid #333;
   padding-bottom: 5px;
 }
@@ -65,7 +81,7 @@ h2 {
 /* Textarea styling */
 textarea {
   width: 100%;
-  height: 300px;  /* Larger text field */
+  height: 600px; 
   padding: 10px;
   font-size: 16px;
   border: 1px solid #444;
@@ -78,7 +94,7 @@ textarea {
 }
 
 textarea:focus {
-  border-color: var(--primary-color); /* Using the color variable */
+  border-color: var(--primary-color);
   box-shadow: 0 0 3px rgba(79, 195, 247, 0.5);
 }
 
@@ -104,7 +120,7 @@ li {
   margin-top: 10px;
   padding: 10px 15px;
   font-size: 16px;
-  background: var(--primary-color); /* Using the color variable */
+  background: var(--primary-color);
   border-radius: 4px;
   color: #121212;
   display: inline-block;
@@ -119,17 +135,17 @@ li {
   margin-top: 10px;
   padding: 10px 15px;
   font-size: 16px;
-  background: var(--primary-color); /* Using the color variable */
+  background: var(--primary-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   color: #121212;
   transition: background 0.2s ease;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Explicitly set the font-family */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .copy-button:hover {
-  background: var(--highlight-color); /* Using the color variable */
+  background: var(--highlight-color);
 }
 
 /* Toast banner styling */
@@ -137,13 +153,14 @@ li {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--primary-color); /* Using the color variable */
+  background: var(--primary-color);
   color: #121212;
   padding: 15px 20px;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   opacity: 0.9;
   animation: fadeOut 0.5s ease-out 2.5s forwards;
+  z-index: 100;
 }
 
 /* Fade out animation for toast */
@@ -152,4 +169,19 @@ li {
     opacity: 0;
     visibility: hidden;
   }
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  background: #181818; 
+  color: #fff;       
+  font-size: 0.95em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  letter-spacing: 0.5px;
 }

@@ -22,7 +22,7 @@ function App() {
     setEmails(uniqueEmails);
   };
 
-  // Function to copy emails to clipboard and show a toast banner
+  // Function to copy emails to clipboard and show notification banner
   const copyEmails = () => {
     if (emails.length > 0) {
       const emailsText = emails.join('\n');
@@ -66,17 +66,22 @@ function App() {
               <li key={index}>{email}</li>
             ))}
           </ul>
-          <div className="notification">
-            <div className="notification-message">
-              Found {emails.length} email{emails.length !== 1 && 's'}
+          <div className="actions-row">
+            <div className="notification">
+              <div className="notification-message">
+                Found {emails.length} email{emails.length !== 1 && 's'}
+              </div>
             </div>
+            <button className="copy-button" onClick={copyEmails}>
+              Copy Emails
+            </button>
           </div>
-          <button className="copy-button" onClick={copyEmails}>
-            Copy Emails
-          </button>
         </div>
       </div>
       {toastMessage && <div className="toast">{toastMessage}</div>}
+    <footer className="footer">
+      © 2024 &bull; Caleb Kim - All Rights Reserved
+    </footer>
     </div>
   );
 }
